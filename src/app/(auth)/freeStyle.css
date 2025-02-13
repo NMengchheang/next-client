@@ -1,0 +1,44 @@
+
+/* ==========================++========================== */
+/* Pulsing Dots Loader */
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.loader div {
+    width: 12px;
+    height: 12px;
+    background-color: #3498db;
+    border-radius: 50%;
+    animation: pulse 0.8s ease-in-out infinite;
+}
+    
+.loader div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loader div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+  
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(0.8);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+  /* ==========================++========================== */
+  /* And HTML Structure*/
+  /* <div class="loader">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div> */
+  /* ==========================++========================== */
+
