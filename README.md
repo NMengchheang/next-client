@@ -1,2 +1,2 @@
 # next-client
-D:\PractIceWebApplication\laranext
+D:\PractIceWebApplication\laranext\
