@@ -101,12 +101,6 @@ export const useAuth = ({
     }, [error, mutate]);
 
     useEffect(() => {
-
-        console.log('Middleware:', middleware);
-        console.log('User:', user);
-        console.log('Error:', error);
-        console.log('Current Path:', window.location.pathname);
-
         // Ensure that user and error are loaded before running any logic
         if (!user && !error) return;
 
@@ -127,7 +121,15 @@ export const useAuth = ({
             return;
         }
 
-        // 3. Redirect to role-based dashboards for logged-in users
+        // 3. Redirect unverified users to /verify-email
+        if (middleware === 'auth' && user && !user.email_verified_at) {
+            if (window.location.pathname !== '/verify-email') {
+                router.push('/verify-email');
+            }
+            return;
+        }
+
+        // 4. Redirect to role-based dashboards for logged-in users
         if (middleware === 'auth' && user) {
         
             if (user.role === 'admin' && !currentPath.startsWith('/dashboard_admin')) {
@@ -145,15 +147,6 @@ export const useAuth = ({
             return; // Prevent further checks after role redirect
         }
 
-        // 4. Redirect unverified users to /verify-email
-        if (middleware === 'auth' && user && !user.email_verified_at) {
-            if (window.location.pathname !== '/verify-email') {
-                router.push('/verify-email');
-            }
-            return;
-        }
-        
-
         // 5. Redirect authenticated guest users to the specified page
         if (middleware === 'guest' && redirectIfAuthenticated && user) {
             if (currentPath !== redirectIfAuthenticated) {
@@ -165,8 +158,7 @@ export const useAuth = ({
 
         // 6. Redirect verified users away from /verify-email
         if (currentPath === '/verify-email' && user?.email_verified_at) {
-            console.log('Redirecting to dashboard');
-            router.push(redirectIfAuthenticated || '/dashboard');
+            router.push(redirectIfAuthenticated || '/');
             return;
         }
         
