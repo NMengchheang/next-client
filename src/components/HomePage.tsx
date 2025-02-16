@@ -17,6 +17,8 @@ export default function HomePage() {
 
     return (
         <div className="bg-gray-100">
+            
+
             {/* Hero Section */}
             <section className="relative bg-blue-600 text-white py-20 px-6 text-center">
                 <h1 className="text-4xl font-bold mb-4">Welcome to Our Store</h1>
@@ -33,15 +35,15 @@ export default function HomePage() {
                 <h2 className="text-gray-700 text-2xl font-bold text-center mb-8">Shop by Category</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="bg-white rounded-lg shadow-md p-4 text-center">
-                        <img src="/path-to-category-image1.jpg" alt="Category 1" className="w-full rounded-lg mb-4" />
+                        <img src="/carouselImage/carouselImage_1.webp" alt="Category 1" className="w-full rounded-lg mb-4" />
                         <h3 className="font-semibold text-lg">Category 1</h3>
                     </div>
                     <div className="bg-white rounded-lg shadow-md p-4 text-center">
-                        <img src="/path-to-category-image2.jpg" alt="Category 2" className="w-full rounded-lg mb-4" />
+                        <img src="/carouselImage/carouselImage_1.webp" alt="Category 2" className="w-full rounded-lg mb-4" />
                         <h3 className="font-semibold text-lg">Category 2</h3>
                     </div>
                     <div className="bg-white rounded-lg shadow-md p-4 text-center">
-                        <img src="/path-to-category-image3.jpg" alt="Category 3" className="w-full rounded-lg mb-4" />
+                        <img src="/carouselImage/carouselImage_1.webp" alt="Category 3" className="w-full rounded-lg mb-4" />
                         <h3 className="font-semibold text-lg">Category 3</h3>
                     </div>
                 </div>

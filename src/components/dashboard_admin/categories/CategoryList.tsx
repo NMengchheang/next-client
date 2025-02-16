@@ -1,7 +1,7 @@
 'use client'
 
 import { createCategory, deleteCategory, updateCategory } from "@/app/action";
-import ConfirmationModal from "@/components/ConfirmationModal";
+import ConfirmationModal from "@/components/ConfirmationDeleteModal";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import { useAuth } from "@/hooks/auth";
 import { error } from "console";

@@ -157,5 +157,55 @@ export const deleteCategory = async (id: number) => {
 }
 
 // **** //
-// Cart //
+// User //
 // **** //
+export const fetchUser = async () => {
+    const res = await fetch("http://localhost:8000/api/mgt-user/", {
+        headers: {
+            'Content-Type' : 'application/json',
+            'Accept' : 'application/json',
+        },
+    });
+    if (!res.ok) {
+        throw new Error('Cannot fetch from actions.ts');
+    }
+    const data = await res.json();
+    return data;
+}
+export const updateUser = async ( id: number, updatedData: {
+    role?: string; 
+    status?: string
+}) => {
+    const res = await fetch(`http://127.0.0.1:8000/api/mgt-user/update-on-id=${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type' : 'application/json',
+            'Accept' : 'application'
+        },
+        body: JSON.stringify(updatedData),
+    })
+    if (!res.ok) {
+        const errorMessage = await res.text();
+        throw new Error(`Failed to create user: ${errorMessage}`);
+    }
+    return res.json();
+}
+export const deleteUser = async (id: number) => {
+    try {
+        const res = await fetch(`http://localhost:8000/api/mgt-user/update-on-id=${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+        })
+        if (!res.ok) {
+            const errorMessage = await res.text();
+            throw new Error(`Failed to delete user: ${errorMessage}`);
+        }
+        return res.json();
+    } catch (error) {
+        console.error(error);
+        throw new Error('Failed to delete user.');
+    } 
+}

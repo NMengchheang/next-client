@@ -6,7 +6,7 @@ import { useAuth } from "@/hooks/auth";
 import { useEffect, useState } from "react";
 import { FaRegEdit } from "react-icons/fa";
 import { CiCircleRemove } from "react-icons/ci";
-import ConfirmationModal from "@/components/ConfirmationModal";
+import ConfirmationModal from "@/components/ConfirmationDeleteModal";
 import { IoMdAdd } from "react-icons/io";
 import { MdUpdate } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";

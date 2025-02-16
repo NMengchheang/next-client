@@ -15,7 +15,7 @@ const mockProducts: Product[] = [
     { id: 6, name: 'Product F', price: 60, image: "/productImage/computer_2.png", quantity: 1},
     { id: 7, name: 'Product G', price: 70, image: "/productImage/computer_3.jpg", quantity: 1},
     { id: 8, name: 'Product H', price: 80, image: "/productImage/computer_4.png", quantity: 1},
-    { id: 9, name: 'Product I', price: 90, image: "/productImage/computer_5.jpg", quantity: 1},
+    { id: 9, name: 'Product I', price: 90, image: "/carouselImage/carouselImage_2.webp", quantity: 1},
 ];
 
 export default mockProducts;

@@ -56,6 +56,7 @@ export default function ConfirmationModal({
                             <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
                             <p className="mt-2 text-sm text-gray-600">{message}</p>
                             <div className="mt-4 flex justify-end space-x-3">
+                                
                                 <button
                                     onClick={onClose}
                                     className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200"
@@ -69,6 +70,7 @@ export default function ConfirmationModal({
                                 >
                                     { isDeleting ? "Deleting..." : "Delete"}
                                 </button>
+
                             </div>
                         </motion.div>
                     </motion.div>
@@ -86,7 +88,7 @@ export default function ConfirmationModal({
                     >
                         <div className="bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg flex items-center space-x-2">
                             <FaCheckCircle className="text-lg" />
-                            <span>Deletion successful !</span>
+                            <span>Deletion successful!</span>
                         </div>
                     </motion.div>
                 )}
